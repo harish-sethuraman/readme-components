@@ -9,7 +9,7 @@ ${linearProgressStyles(fill)}
   <div xmlns="http://www.w3.org/1999/xhtml">
   <div class="ProgressTitle">${skill}</div>
   <div
-    class="progress ${design ? fill : "plain"}"
+    class="progress ${design ? design : "plain"}"
     data-width="0%"
   >
     <div class="ProgressText">
