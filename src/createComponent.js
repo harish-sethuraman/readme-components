@@ -19,7 +19,7 @@ const createComponent = (component, params = {}) => {
       ) {
         return linearProgress(skill, value, design, fill);
       } else {
-        return linearProgress(skill, value, fill);
+        return linearProgress(skill, value, design, fill);
       }
     } else {
       return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
