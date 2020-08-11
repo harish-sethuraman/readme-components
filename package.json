@@ -1,0 +1,22 @@
+{
+  "name": "readme-components",
+  "version": "1.0.0",
+  "description": "Components that can be used in readme are generated dynamically",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harish-sethuraman/readme-components.git"
+  },
+  "keywords": [
+    "readmecomponents"
+  ],
+  "author": "Harish Kumar S S",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harish-sethuraman/readme-components/issues"
+  },
+  "homepage": "https://github.com/harish-sethuraman/readme-components#readme"
+}
