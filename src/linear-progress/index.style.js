@@ -96,9 +96,7 @@ const linearProgressStyles = (fill) => {
       }
       /* plain */
       .progress.plain .ProgressBars {
-        background-color: ${
-          fill ? (isNaN(fill) ? fill : "#" + fill) : "#8965e0"
-        };
+        background-color: ${fill ? `#${fill}` : "#8965e0"};
       }
       
       /* Copper style */
