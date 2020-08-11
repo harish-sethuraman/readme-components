@@ -6,7 +6,7 @@
 *You can also pass custom colors(hex values) using the fill param(&fill=ffc0cd) !*
 > Custom colors
 > 
-> `![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=green)code here`
+> `![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=ffc0cd)code here`
 > 
 ![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=ffc0cd)
 ## Designs available
