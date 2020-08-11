@@ -23,8 +23,6 @@
 >
 ![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=candy)
 
- - [ ] List item
-
 >Neon
 >
 ![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=neon)
