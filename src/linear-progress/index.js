@@ -3,7 +3,7 @@ const linearProgress = (skill, value, design, fill) => {
   return `
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
 <style>
-${linearProgressStyles(fill)}
+${linearProgressStyles(fill,value)}
 </style>
   <foreignObject width="250" height="100">
   <div xmlns="http://www.w3.org/1999/xhtml">

@@ -19,6 +19,7 @@ const createComponent = (component, params = {}) => {
       ) {
         return linearProgress(skill, value, design, fill);
       } else {
+        let design=undefined
         return linearProgress(skill, value, design, fill);
       }
     } else {
