@@ -10,40 +10,28 @@
 > 
 ![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=ffc0cd)
 ## Designs available
-> Candy 
-> 
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=candy)
-> Aqua
-> 
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=aqua)
->Copper
->
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=copper)
->Candy
->
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=candy)
+<a href="https://github.com/harish-sethuraman/readme-components">
+  <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=aqua&value=50&design=aqua" />
+</a>
+<a href="https://github.com/harish-sethuraman/readme-components">
+  <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=copper&value=50&design=copper" />
+</a>
+<a href="https://github.com/harish-sethuraman/readme-components">
+  <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=candy&value=50&design=candy" />
+</a>
+<a href="https://github.com/harish-sethuraman/readme-components">
+  <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=neon&value=50&design=neon" />
+</a>
+<a href="https://github.com/harish-sethuraman/readme-components">
+  <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=zigzag&value=50&design=zigzag" />
+</a>
+<a href="https://github.com/harish-sethuraman/readme-components">
+  <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=diamond&value=50&design=diamond" />
+</a>
 
->Neon
->
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=neon)
-
->Zigzag
->
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=zigzag)
->Diamond
->
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=diamond)
-
->Shine
->
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=shine)
->Hearts
->
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=hearts)
->Sparkle
->
-![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50&design=sparkle)
-> 
->
-
-    
+<a href="https://github.com/harish-sethuraman/readme-components">
+  <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=shine&value=50&design=shine" />
+</a>
+<a href="https://github.com/harish-sethuraman/readme-components">
+  <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=hearts&value=50&design=hearts" />
+</a>
