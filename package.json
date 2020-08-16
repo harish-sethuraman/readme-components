@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/harish-sethuraman/readme-components/issues"
   },
-  "homepage": "https://github.com/harish-sethuraman/readme-components#readme"
+  "homepage": "https://github.com/harish-sethuraman/readme-components#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
 }

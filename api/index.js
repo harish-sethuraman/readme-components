@@ -2,16 +2,20 @@ const createComponent = require("../src/createComponent");
 const componentNotFound = require("../src/component-not-found");
 
 module.exports = async (req, res) => {
-  const { component, skill, value, design,fill } = req.query;
+  const { component, skill, value, design, fill, duration, role ,company} = req.query;
   res.setHeader("Content-Type", "image/svg+xml");
   // const params = ;
   if (component && req.query) {
-    res.send(createComponent(component,{
+    let createcompo = await createComponent(component, {
       skill,
       value,
       design,
       fill,
-    }));
+      duration,
+      role,
+      company,
+    });
+    res.send(createcompo);
   } else {
     res.send(componentNotFound());
   }
