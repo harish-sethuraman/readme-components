@@ -20,20 +20,24 @@ const experienceComponent = (data = {}) => {
       <div class="value">${name}
       </div>
     </div>
-    <div class="experience">
+    ${duration != undefined ?
+    `<div class="experience">
       <div class="title">
-        <h4>Experience: </h4>
+        <h4>Duration: </h4>
       </div>
       <div class="value">
         <p> ${duration}</p>
       </div>
-    </div>
-    <div class="position">
+    </div> `: ''
+    }
+    ${role != undefined ?
+    `<div class="position">
       <div class="title">
-        <h4>Position:</h4>
+        <h4>Role:</h4>
       </div>
       <div class="value">${role}</div>
-    </div>
+    </div>` : ''
+    }
   </div>
 </div>
   </div>

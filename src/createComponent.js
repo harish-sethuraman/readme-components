@@ -2,9 +2,20 @@ const linearProgress = require("./linear-progress");
 const faultComponent = require("./fault-component");
 const experienceComponent = require("./experience-component");
 const fetchData = require("./utils/dataFetcher");
+const logoComponent = require("./logo-component");
 
 const createComponent = async (component, params = {}) => {
-  const { skill, value, design, fill, duration, company, role } = params;
+  const {
+    skill,
+    value,
+    design,
+    fill,
+    duration,
+    company,
+    role,
+    logo,
+    text,
+  } = params;
   if (component == "linearprogress") {
     if (value && value <= 100 && value >= 0 && skill) {
       if (
@@ -35,23 +46,37 @@ const createComponent = async (component, params = {}) => {
           </svg>`;
     }
   } else if (component == "experience") {
-    const val = await fetchData(
-      `https://autocomplete.clearbit.com/v1/companies/suggest?query=${company}`
-    );
-    console.log(duration);
-    if (val.status == 200) {
-      const data = val.data[0];
-      data["role"] = role;
-      if (duration.includes("m") || duration.includes("M")) {
-        let value = duration.replace(/[A-Za-z]/, "");
-        data["duration"] = value + " months";
-      } else {
-        let value = duration.replace(/[A-Za-z]/, "");
-        data["duration"] = value + " years";
-      }
+    if (company != undefined) {
+      const val = await fetchData(
+        `https://autocomplete.clearbit.com/v1/companies/suggest?query=${company}`
+      );
+      console.log(duration);
+      if (val.status == 200) {
+        const data = val.data[0];
+        data["role"] = role;
+        if (duration != undefined) {
+          if (duration.includes("m") || duration.includes("M")) {
+            let value = duration.replace(/[A-Za-z]/, "");
+            data["duration"] = value + " months";
+          } else {
+            let value = duration.replace(/[A-Za-z]/, "");
+            data["duration"] = value + " years";
+          }
+        }
 
-      return experienceComponent(data);
+        return experienceComponent(data);
+      } else {
+        return faultComponent();
+      }
     } else {
+      return faultComponent();
+    }
+  } else if (component == "logo") {
+    if(logo != undefined )
+    {
+    return logoComponent(logo,fill, text);
+    }
+    else{
       return faultComponent();
     }
   } else {
