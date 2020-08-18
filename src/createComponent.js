@@ -17,6 +17,7 @@ const createComponent = async (component, params = {}) => {
     logo,
     text,
     stackoverflowid,
+    theme
   } = params;
   if (component == "linearprogress") {
     if (value && value <= 100 && value >= 0 && skill) {
@@ -84,7 +85,7 @@ const createComponent = async (component, params = {}) => {
       const val = await fetchData(
         `https://api.stackexchange.com/2.2/users/${stackoverflowid}?order=desc&sort=reputation&site=stackoverflow&filter=!b6Aub2or8vkePb`
       );
-      return stackoverflowComponent(val);
+      return stackoverflowComponent(val,theme);
     } else {
       return faultComponent();
     }

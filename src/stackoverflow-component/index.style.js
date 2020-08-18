@@ -4,13 +4,13 @@ const stackoverflowStyle = () => {
     color:inherit;
     }
     .container{
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+    font-family: Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
     line-height: 1.5;
     border:2px solid #fafafa;
     border-radius: 6px;
     background: #fafafa;
     padding: 24px 17px;
-    max-width: 412px;
+    max-width: 405px;
     margin:12px;
     font-size: 13px;
     color: #24292e;
@@ -68,7 +68,7 @@ const stackoverflowStyle = () => {
     content: "questions"
     }
     .section1 .report .reached::after{
-    content: "people reached";
+    content: "profile views";
     white-space: nowrap;
     }
     .section2{
@@ -127,7 +127,19 @@ const stackoverflowStyle = () => {
     background-color: #c68d79;
     height: 7.5px;
     width: 7.5px;
-    }`;
+    }
+
+    .dark-card{
+        color:#f6f6f6;
+        background-color:#2a2a2a;
+        border:2px solid #2a2a2a;
+    }
+    .dark-text{
+        color:white !important;
+    }       
+    
+    
+    `;
 };
 
 module.exports = stackoverflowStyle;
