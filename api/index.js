@@ -13,9 +13,9 @@ module.exports = async (req, res) => {
     company,
     logo,
     text,
+    stackoverflowid
   } = req.query;
   res.setHeader("Content-Type", "image/svg+xml");
-  // const params = ;
   if (component && req.query) {
     let createcompo = await createComponent(component, {
       skill,
@@ -27,6 +27,7 @@ module.exports = async (req, res) => {
       company,
       logo,
       text,
+      stackoverflowid
     });
     res.send(createcompo);
   } else {

@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/harish-sethuraman/readme-components#readme",
   "dependencies": {
-    "axios": "^0.19.2",
+    "node-fetch": "^2.6.0",
     "simple-icons": "^3.5.0"
   }
 }

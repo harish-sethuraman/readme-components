@@ -3,6 +3,7 @@ const faultComponent = require("./fault-component");
 const experienceComponent = require("./experience-component");
 const fetchData = require("./utils/dataFetcher");
 const logoComponent = require("./logo-component");
+const stackoverflowComponent = require("./stackoverflow-component");
 
 const createComponent = async (component, params = {}) => {
   const {
@@ -15,6 +16,7 @@ const createComponent = async (component, params = {}) => {
     role,
     logo,
     text,
+    stackoverflowid,
   } = params;
   if (component == "linearprogress") {
     if (value && value <= 100 && value >= 0 && skill) {
@@ -50,9 +52,9 @@ const createComponent = async (component, params = {}) => {
       const val = await fetchData(
         `https://autocomplete.clearbit.com/v1/companies/suggest?query=${company}`
       );
-      console.log(duration);
-      if (val.status == 200) {
-        const data = val.data[0];
+      console.log("val", val);
+      if (val.length > 0) {
+        const data = val[0];
         data["role"] = role;
         if (duration != undefined) {
           if (duration.includes("m") || duration.includes("M")) {
@@ -72,11 +74,18 @@ const createComponent = async (component, params = {}) => {
       return faultComponent();
     }
   } else if (component == "logo") {
-    if(logo != undefined )
-    {
-    return logoComponent(logo,fill, text);
+    if (logo != undefined) {
+      return logoComponent(logo, fill, text);
+    } else {
+      return faultComponent();
     }
-    else{
+  } else if (component == "stackoverflow") {
+    if (stackoverflowid != undefined) {
+      const val = await fetchData(
+        `https://api.stackexchange.com/2.2/users/${stackoverflowid}?order=desc&sort=reputation&site=stackoverflow&filter=!b6Aub2or8vkePb`
+      );
+      return stackoverflowComponent(val);
+    } else {
       return faultComponent();
     }
   } else {
