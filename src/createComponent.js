@@ -16,6 +16,7 @@ const createComponent = async (component, params = {}) => {
     role,
     logo,
     text,
+    location,
     stackoverflowid,
     theme
   } = params;
@@ -53,10 +54,11 @@ const createComponent = async (component, params = {}) => {
       const val = await fetchData(
         `https://autocomplete.clearbit.com/v1/companies/suggest?query=${company}`
       );
-      console.log("val", val);
       if (val.length > 0) {
         const data = val[0];
         data["role"] = role;
+        data["location"]=location;
+        data["fill"]=fill;
         if (duration != undefined) {
           if (duration.includes("m") || duration.includes("M")) {
             let value = duration.replace(/[A-Za-z]/, "");
