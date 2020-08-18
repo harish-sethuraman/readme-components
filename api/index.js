@@ -13,7 +13,8 @@ module.exports = async (req, res) => {
     company,
     logo,
     text,
-    stackoverflowid
+    stackoverflowid,
+    theme
   } = req.query;
   res.setHeader("Content-Type", "image/svg+xml");
   if (component && req.query) {
@@ -27,7 +28,8 @@ module.exports = async (req, res) => {
       company,
       logo,
       text,
-      stackoverflowid
+      stackoverflowid,
+      theme
     });
     res.send(createcompo);
   } else {
