@@ -13,6 +13,7 @@ module.exports = async (req, res) => {
     company,
     logo,
     text,
+    location,
     stackoverflowid,
     theme
   } = req.query;
@@ -28,6 +29,7 @@ module.exports = async (req, res) => {
       company,
       logo,
       text,
+      location,
       stackoverflowid,
       theme
     });
