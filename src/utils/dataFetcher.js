@@ -1,7 +1,7 @@
-const axios = require("axios");
+const fetch = require("node-fetch");
 
 const fetchData = async (url) => {
-  let val = await axios.get(url).then((res) => res).catch( (err) => err) ;
+  let val = await fetch(url).then((res) => res.json()).catch( (err) => err) ;
   return val;
 };
 module.exports = fetchData;
