@@ -1,6 +1,6 @@
-const durationSVG = (fill) =>{
+const durationSVG = (textfill) =>{
 	return `<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	width="32" height="28" fill="${fill ? `#${fill}` : "#165eff"}" viewBox="0 0 612 612"  xml:space="preserve">
+	width="32" height="28" fill="${textfill ? `#${textfill}` : "white"}" viewBox="0 0 612 612"  xml:space="preserve">
 <g>
    <g>
 	   <g>

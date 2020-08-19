@@ -1,4 +1,4 @@
-const locationSVG = (fill) => {
+const locationSVG = (textfill) => {
   return `<svg
   version="1.1"
   id="Layer_1"
@@ -9,7 +9,7 @@ const locationSVG = (fill) => {
   width="32"
   height="32"
   viewBox="0 0 512 512"
-  fill="${fill ? `#${fill}` : "#165eff"}"
+  fill="${textfill ? `#${textfill}` : "white"}"
   xml:space="preserve"
 >
   <path

@@ -1,4 +1,4 @@
-const stackoverflowStyle = () => {
+const stackoverflowStyle = (fill, textfill) => {
   return `      a{
     text-decoration: none;
     color:inherit;
@@ -6,14 +6,14 @@ const stackoverflowStyle = () => {
     .container{
     font-family: Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
     line-height: 1.5;
-    border:2px solid #fafafa;
+    border:2px solid ${fill ? `#${fill}` : "#fafafa"};
     border-radius: 6px;
-    background: #fafafa;
+    background: ${fill ? `#${fill}` : "#fafafa"};
     padding: 24px 17px;
     max-width: 405px;
     margin:12px;
     font-size: 13px;
-    color: #24292e;
+    color: ${textfill ? `#${textfill}` : "#24292e"};
     box-shadow:0 2px 10px 3px rgb(0 0 0 / 0.2);
     }
     .section1{
@@ -28,7 +28,9 @@ const stackoverflowStyle = () => {
     display: flex; flex-direction: column; margin-left: 12px
     }
     .section1 .userdetails .name {
-    font-weight: 500; color: #ef8236; font-size: 18px;
+    font-weight: 500; color: ${
+      textfill ? `#${textfill}` : "#ef8236"
+    }; font-size: 18px;
     }
     .section1 .userdetails .location{
     font-weight: 400; color: #586069; font-size: 12px
@@ -78,23 +80,29 @@ const stackoverflowStyle = () => {
     display: flex; flex-direction: column;
     }
     .section2 .reputation .text{
-    font-size: 10px; font-weight: 500; color: #586069;
+    font-size: 10px; font-weight: 500; color: ${
+      textfill ? `#${textfill}` : "#586069"
+    } ;
     }
     .section2 .reputation .value{
-    font-weight: 600; color: #211F1F; font-size: 30px; line-height: 1;
+    font-weight: 600; color: ${
+      textfill ? `#${textfill}` : "#211F1F"
+    }; font-size: 30px; line-height: 1;
     }
     .section2 .badges{
     display: flex; flex-direction: column; margin-top: -4px;
     }
     .section2 .badges .text{
-    font-size: 11px; font-weight: 500; color: #586069;
+    font-size: 11px; font-weight: 500; color: ${
+      textfill ? `#${textfill}` : "#586069"
+    };
     }
     .section2 .badges .badgeicon{
     display: flex; flex-direction: row; font-weight: 400; color: #211F1F; font-size: 10px; margin-top: 2px;
     }
     .section2 .badges .badgeicon .gold {
     display: flex;
-    min-width: 45px; text-align: center; padding: 4px 0px 4px 0px; background-color: #fff4d1; border: 1px solid #f1b600; border-radius: 5px
+    min-width: 45px; text-align: center; padding: 4px 4px 4px 0px; background-color: #fff4d1; border: 1px solid #f1b600; border-radius: 5px
     }
     .section2 .badges .badgeicon .silver::before{
     content: '';
@@ -106,7 +114,7 @@ const stackoverflowStyle = () => {
     }
     .section2 .badges .badgeicon .silver{
     display: flex;
-    min-width: 45px; text-align: center; padding: 4px 0px 4px 0px; background-color: #e8e8e8; margin: 0 4px 0 4px; border: 1px solid #9a9c9f; border-radius: 5px;
+    min-width: 45px; text-align: center; padding: 4px 4px 4px 0px; background-color: #e8e8e8; margin: 0 4px 0 4px; border: 1px solid #9a9c9f; border-radius: 5px;
     }
     .section2 .badges .badgeicon .gold::before{
     content: '';
@@ -118,7 +126,7 @@ const stackoverflowStyle = () => {
     }
     .section2 .badges .badgeicon .bronze{
     display: flex;
-    min-width: 45px; text-align: center; padding: 4px 0px 4px 0px; background-color: #f2e9e1; border: 1px solid #ab825f; border-radius: 5px;
+    min-width: 45px; text-align: center; padding: 4px 4px 4px 0px; background-color: #f2e9e1; border: 1px solid #ab825f; border-radius: 5px;
     }
     .section2 .badges .badgeicon .bronze::before{
     content: '';

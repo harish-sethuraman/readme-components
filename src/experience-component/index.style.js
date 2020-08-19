@@ -1,4 +1,4 @@
-const experienceComponentStyles = (fill) =>
+const experienceComponentStyles = (fill,textfill) =>
 {
     return `
     * {
@@ -14,14 +14,17 @@ const experienceComponentStyles = (fill) =>
         border-radius: 6px;
         width: auto;
         box-shadow: 0 10px 15px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
+        background-color:${fill ? `#${fill}` : "#8965e0"};
+        color: ${textfill ? `#${textfill}` : 'white'}
+
+
       }
       .logo-container {
         padding: 10px;
         display:flex;
         font-size:18px;
-        font-family:cursive;
+        font-family:'Open Sans', sans-serif;
         font-weight:bold;
-        color:${fill ? `#${fill}` : "#165eff"};
         flex-direction:column;
       }
       .logo-container *{
@@ -64,7 +67,7 @@ const experienceComponentStyles = (fill) =>
       .value {
         padding-left: 5px;
         margin:auto 3px;
-        font-family:cursive;
+        font-family:'Open Sans', sans-serif;
         font-size:14.5px;
       }
       .value::first-letter{

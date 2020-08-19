@@ -18,7 +18,8 @@ const createComponent = async (component, params = {}) => {
     text,
     location,
     stackoverflowid,
-    theme
+    theme,
+    textfill,
   } = params;
   if (component == "linearprogress") {
     if (value && value <= 100 && value >= 0 && skill) {
@@ -57,8 +58,9 @@ const createComponent = async (component, params = {}) => {
       if (val.length > 0) {
         const data = val[0];
         data["role"] = role;
-        data["location"]=location;
-        data["fill"]=fill;
+        data["location"] = location;
+        data["fill"] = fill;
+        data["textfill"] = textfill;
         if (duration != undefined) {
           if (duration.includes("m") || duration.includes("M")) {
             let value = duration.replace(/[A-Za-z]/, "");
@@ -87,7 +89,20 @@ const createComponent = async (component, params = {}) => {
       const val = await fetchData(
         `https://api.stackexchange.com/2.2/users/${stackoverflowid}?order=desc&sort=reputation&site=stackoverflow&filter=!b6Aub2or8vkePb`
       );
-      return stackoverflowComponent(val,theme);
+      if(val.error_id=="400")
+      {
+      return faultComponent();
+      }
+      else
+      {
+      let data = {
+        val,
+        theme,
+        fill,
+        textfill,
+      };
+      return stackoverflowComponent(data);
+    }
     } else {
       return faultComponent();
     }
