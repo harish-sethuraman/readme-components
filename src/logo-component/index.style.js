@@ -1,6 +1,12 @@
 const logoComponentStyles =(fill) =>
 {
     return `
+    foreignObject
+    {
+        height:1;
+        width:1;
+        overflow:visible;
+    }
     foreignObject svg {
         width: 30px;
         height: 30px;
@@ -9,7 +15,7 @@ const logoComponentStyles =(fill) =>
         border: 2px solid #fff;
         text-align: center;
       }
-      
+
       .gradient-btn {
         display: flex;
         height: 57px;
@@ -25,6 +31,8 @@ const logoComponentStyles =(fill) =>
       .text {
         margin-top: 16px;
         margin-left: 10px;
+        font-size: 1.1rem;
+        white-space:nowrap;
       }
       .svg {
         margin-top: 10px;
