@@ -1,12 +1,6 @@
 const logoComponentStyles =(fill) =>
 {
     return `
-    foreignObject
-    {
-        height:1;
-        width:1;
-        overflow:visible;
-    }
     foreignObject svg {
         width: 30px;
         height: 30px;
@@ -26,7 +20,7 @@ const logoComponentStyles =(fill) =>
         color: #fff;
         box-shadow: 5px 5px 2px -2px #a5a5a5;
         text-transform: capitalize;
-    font-size: 20px;
+        font-size: 20px;
       }
       .text {
         margin-top: 16px;
