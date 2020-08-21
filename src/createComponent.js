@@ -20,6 +20,7 @@ const createComponent = async (component, params = {}) => {
     stackoverflowid,
     theme,
     textfill,
+    animation,
   } = params;
   if (component == "linearprogress") {
     if (value && value <= 100 && value >= 0 && skill) {
@@ -80,7 +81,7 @@ const createComponent = async (component, params = {}) => {
     }
   } else if (component == "logo") {
     if (logo != undefined) {
-      return logoComponent(logo, fill, text);
+      return logoComponent(logo, fill, text, textfill,animation);
     } else {
       return faultComponent();
     }
@@ -89,20 +90,17 @@ const createComponent = async (component, params = {}) => {
       const val = await fetchData(
         `https://api.stackexchange.com/2.2/users/${stackoverflowid}?order=desc&sort=reputation&site=stackoverflow&filter=!b6Aub2or8vkePb`
       );
-      if(val.error_id=="400")
-      {
-      return faultComponent();
+      if (val.error_id == "400") {
+        return faultComponent();
+      } else {
+        let data = {
+          val,
+          theme,
+          fill,
+          textfill,
+        };
+        return stackoverflowComponent(data);
       }
-      else
-      {
-      let data = {
-        val,
-        theme,
-        fill,
-        textfill,
-      };
-      return stackoverflowComponent(data);
-    }
     } else {
       return faultComponent();
     }

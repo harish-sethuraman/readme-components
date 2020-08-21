@@ -1,13 +1,14 @@
-const logoComponentStyles =(fill) =>
-{
-    return `
+const logoComponentStyles = (fill, textfill, animation) => {
+  return `
     foreignObject svg {
         width: 30px;
         height: 30px;
         line-height: 40px;
         border-radius: 50%;
-        border: 2px solid #fff;
+        margin-top:2px;
         text-align: center;
+        fill: ${textfill ? `#${textfill}` : "white"};
+        animation : ${animation ? `${animation} 4s linear infinite` : ""};
       }
 
       .gradient-btn {
@@ -32,8 +33,12 @@ const logoComponentStyles =(fill) =>
         margin-top: 10px;
       }
       .btn-color {
-        background-color: ${fill ? `#${fill}` : '#8965e0'}
+        background-color: ${fill ? `#${fill}` : "#8965e0"};
+        color : ${textfill ? `#${textfill}` : "white"} ;
       }
-  `
-}
-module.exports = logoComponentStyles
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+  `;
+};
+module.exports = logoComponentStyles;

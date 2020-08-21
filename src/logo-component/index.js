@@ -2,14 +2,14 @@ const logoComponentStyles = require("./index.style");
 const simpleIcons = require("simple-icons");
 const faultComponent = require("../fault-component");
 
-const logoComponent = (logo, fill, text) => {
+const logoComponent = (logo, fill, text, textfill,animation) => {
   if (simpleIcons.get(logo) != undefined) {
     return `
     <svg height="70" width="${
       text == "false" ? "70" : `${70 + logo.length * 8 + 10}`
     }" xmlns="http://www.w3.org/2000/svg">
     <style>
-    ${logoComponentStyles(fill)}
+    ${logoComponentStyles(fill, textfill,animation)}
     </style>
       <foreignObject height="70" width="${
         text == "false" ? "70" : `${70 + logo.length * 8 + 10}`
