@@ -4,7 +4,6 @@ const experienceComponent = require("./experience-component");
 const fetchData = require("./utils/dataFetcher");
 const logoComponent = require("./logo-component");
 const stackoverflowComponent = require("./stackoverflow-component");
-
 const createComponent = async (component, params = {}) => {
   const {
     skill,
