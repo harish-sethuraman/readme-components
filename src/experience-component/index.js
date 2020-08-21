@@ -2,7 +2,9 @@ const experienceComponentStyles = require("./index.style");
 const durationSVG = require("./duration.svg");
 const roleSVG = require("./role.svg");
 const locationSVG = require("./location.svg");
-const experienceComponent = (data = {}) => {
+const imgFetcher = require('../utils/imgFetcher')
+
+const experienceComponent =async (data = {}) => {
   const { logo, name, duration, role, location, fill, textfill } = data;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${
     role != undefined || duration != undefined || location != undefined
@@ -14,7 +16,7 @@ const experienceComponent = (data = {}) => {
       : "160"
   }">
   <style>
-  ${experienceComponentStyles(fill)}
+  ${experienceComponentStyles(fill,textfill)}
   </style>
 <foreignObject width="${
     role != undefined || duration != undefined || location != undefined
@@ -24,7 +26,7 @@ const experienceComponent = (data = {}) => {
   <div xmlns="http://www.w3.org/1999/xhtml">
   <div class="flex-container">
   <div class="logo-container">
-    <img src="${logo}" />
+    <img src="${await imgFetcher(logo)}" />
     <div>${name}</div>
   </div>
   ${
