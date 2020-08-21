@@ -8,7 +8,7 @@ const experienceComponent =async (data = {}) => {
   const { logo, name, duration, role, location, fill, textfill } = data;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${
     role != undefined || duration != undefined || location != undefined
-      ? "400"
+      ? "365"
       : "150"
   }" height="${
     role != undefined && duration != undefined && location != undefined
@@ -16,18 +16,18 @@ const experienceComponent =async (data = {}) => {
       : "160"
   }">
   <style>
-  ${experienceComponentStyles(fill,textfill)}
+  ${experienceComponentStyles(data)}
   </style>
 <foreignObject width="${
     role != undefined || duration != undefined || location != undefined
-      ? "400"
+      ? "365"
       : "150"
   }" height="190">
   <div xmlns="http://www.w3.org/1999/xhtml">
   <div class="flex-container">
   <div class="logo-container">
     <img src="${await imgFetcher(logo)}" />
-    <div>${name}</div>
+    <div class="company-name">${name}</div>
   </div>
   ${
     role != undefined || duration != undefined || location != undefined
