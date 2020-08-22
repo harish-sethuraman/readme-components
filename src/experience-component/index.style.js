@@ -1,6 +1,8 @@
-const experienceComponentStyles = (data) =>
-{const { name, duration, role, location, fill, textfill } = data;
-    return `
+const colorFiller = require('../utils/colorFiller')
+
+const experienceComponentStyles = (data) => {
+  const { name, duration, role, location, fill, textfill } = data;
+  return `
     * {
         margin: 0;
         padding: 0;
@@ -14,15 +16,19 @@ const experienceComponentStyles = (data) =>
         border-radius: 6px;
         width: auto;
         box-shadow: 0 10px 15px rgba(50, 50, 93, 0.1), 0 2px 15px rgba(0, 0, 0, 0.07);
-        background-color:${fill ? `#${fill}` : "#8965e0"};
-        color: ${textfill ? `#${textfill}` : 'white'};
+        background:${fill ? colorFiller(fill) : "#8965e0"};
+        color: ${textfill ? `#${textfill}` : "white"};
         display:flex;
-        justify-content:${duration == undefined && role == undefined && location ==undefined ? "center":"start"};
+        justify-content:${
+          duration == undefined && role == undefined && location == undefined
+            ? "center"
+            : "start"
+        };
       }
       .logo-container {
         padding: 10px;
         display:flex;
-        font-size:${name.length >15 ?"11px":"15px"};
+        font-size:${name.length > 15 ? "11px" : "15px"};
         font-family:'Open Sans', sans-serif;
         font-weight:bold;
         flex-direction:column;
@@ -34,7 +40,11 @@ const experienceComponentStyles = (data) =>
       }
       .logo-container,
       .image-background {
-        margin:${duration == undefined && role == undefined && location ==undefined ? "0px":"auto 10px auto 0px"};
+        margin:${
+          duration == undefined && role == undefined && location == undefined
+            ? "0px"
+            : "auto 10px auto 0px"
+        };
            }      
       .img-background,
       img {
@@ -77,7 +87,7 @@ const experienceComponentStyles = (data) =>
       .value::first-letter{
         text-transform:uppercase;        
       }
-      `
-}
+      `;
+};
 
-module.exports = experienceComponentStyles
+module.exports = experienceComponentStyles;

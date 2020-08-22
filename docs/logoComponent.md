@@ -13,12 +13,19 @@
 
 ![techstack logo](https://readme-components.vercel.app/api?component=logo&logo=react)
 
-*You can also pass custom colors(hex values) using the fill param(&fill=ffc0cd) !*
 
 # Custom colors
+*You can also pass custom colors(hex values) using the fill param(&fill=ffc0cd) !*
+
 > `![techstack logo](https://readme-components.vercel.app/api?component=logo&logo=react&fill=ffc0cd)`
 
 ![techstack logo](https://readme-components.vercel.app/api?component=logo&logo=react&fill=ffc0cd)
+
+*use even gradients. except for the fact that you need to url encode it*
+
+> `![techstack logo](https://readme-components.vercel.app/api?component=logo&logo=react&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)`
+
+![techstack logo](https://readme-components.vercel.app/api?component=logo&logo=react&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)
 
 > Custom text and svg colors
 

@@ -1,3 +1,5 @@
+const colorFiller  = require('../utils/colorFiller')
+
 const logoComponentStyles = (fill, textfill, animation) => {
   return `
     foreignObject svg {
@@ -33,7 +35,7 @@ const logoComponentStyles = (fill, textfill, animation) => {
         margin-top: 10px;
       }
       .btn-color {
-        background-color: ${fill ? `#${fill}` : "#8965e0"};
+        background: ${fill ? colorFiller(fill) : "#8965e0"};
         color : ${textfill ? `#${textfill}` : "white"} ;
       }
       @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }

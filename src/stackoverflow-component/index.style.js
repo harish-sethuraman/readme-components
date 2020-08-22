@@ -1,3 +1,5 @@
+const colorFiller = require('../utils/colorFiller')
+
 const stackoverflowStyle = (fill, textfill) => {
   return `      a{
     text-decoration: none;
@@ -8,7 +10,7 @@ const stackoverflowStyle = (fill, textfill) => {
     line-height: 1.5;
     border:2px solid ${fill ? `#${fill}` : "#fafafa"};
     border-radius: 6px;
-    background: ${fill ? `#${fill}` : "#fafafa"};
+    background: ${fill ? colorFiller(fill) : "#fafafa"};
     padding: 24px 17px;
     max-width: 405px;
     margin:12px;

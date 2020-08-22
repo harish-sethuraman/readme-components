@@ -23,8 +23,14 @@ Code for card with dark theme:
 Code for card with fill:
 
     ![stackoverflow card](https://readme-components.vercel.app/api?component=stackoverflow&stackoverflowid=22656&fill=ffc0cd)
-> 
+>
 ![css progressbar](https://readme-components.vercel.app/api?component=stackoverflow&stackoverflowid=22656&fill=ffc0cd)
+
+Code for card with gradient:
+
+    ![stackoverflow card](https://readme-components.vercel.app/api?component=stackoverflow&stackoverflowid=22656&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)
+>
+![css progressbar](https://readme-components.vercel.app/api?component=stackoverflow&stackoverflowid=22656&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)
 
 
 *You can also pass custom text colors (hex values) using the fill param(&fill=ffffff) !*

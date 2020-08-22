@@ -1,3 +1,5 @@
+const colorFiller = require('../utils/colorFiller')
+
 const linearProgressStyles = (fill, value) => {
   return `* {
         box-sizing: content-box;
@@ -62,7 +64,7 @@ const linearProgressStyles = (fill, value) => {
       }
       /* plain */
       .progress.plain .ProgressBars {
-        background-color: ${fill ? `#${fill}` : "#8965e0"};
+        background: ${fill ? colorFiller(fill) : "#8965e0"};
       }
 
       /* Copper style */

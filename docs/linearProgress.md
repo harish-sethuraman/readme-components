@@ -10,6 +10,13 @@
 > `![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=ffc0cd)`
 
 ![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=ffc0cd)
+
+*for gradient fills use the code below by encoding the gradient css*
+
+> `![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)`
+
+![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)
+
 ## Designs available
 <a href="https://github.com/harish-sethuraman/readme-components">
   <img align="center" src="https://readme-components.vercel.app/api?component=linearprogress&skill=aqua&value=50&design=aqua" />

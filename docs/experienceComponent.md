@@ -55,5 +55,12 @@
 
 ![experience component](https://readme-components.vercel.app/api?component=experience&company=freshworks&role=software%20developer%20intern&duration=12m&location=chennai&fill=ffc0cd&textfill=000000)
 
+
+*Even linear gradients can be used except that you need to encode the linear gradient and pass it in the url!*
+
+> `![experience component](https://readme-components.vercel.app/api?component=experience&company=freshworks&role=software%20developer%20intern&duration=12m&location=chennai&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)`
+
+![experience component](https://readme-components.vercel.app/api?component=experience&company=freshworks&role=software%20developer%20intern&duration=12m&location=chennai&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)
+
 *We have used Clearbit's api !*
 
