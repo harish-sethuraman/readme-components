@@ -1,6 +1,7 @@
 # Stackoverflow card
 *Looking for Stackoverflow card for your readme ? here it is. You can pass custom card color and text color to the stackoverflow card.
 pass stackoverflow id and get your card its that easy !*
+
 Code for default card:
 
     ![stackoverflow card](https://readme-components.vercel.app/api?component=stackoverflow&stackoverflowid=22656)
@@ -9,7 +10,7 @@ Code for default card:
 
 ![css progressbar](https://readme-components.vercel.app/api?component=stackoverflow&stackoverflowid=22656)
 
-Code for dark card:
+Code for card with dark theme:
 
     ![stackoverflow card](https://readme-components.vercel.app/api?component=stackoverflow&stackoverflowid=22656&theme=dark)
 >Dark mode

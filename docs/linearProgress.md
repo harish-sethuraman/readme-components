@@ -3,11 +3,12 @@
 > Default color and design
 
 ![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&skill=css&value=50)
+
 *You can also pass custom colors(hex values) using the fill param(&fill=ffc0cd) !*
 > Custom colors
-> 
-> `![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=ffc0cd)code here`
-> 
+
+> `![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=ffc0cd)`
+
 ![css progressbar](https://readme-components.vercel.app/api?component=linearprogress&value=40&skill=css&fill=ffc0cd)
 ## Designs available
 <a href="https://github.com/harish-sethuraman/readme-components">
