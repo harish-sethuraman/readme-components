@@ -4,6 +4,7 @@ const experienceComponent = require("./experience-component");
 const fetchData = require("./utils/dataFetcher");
 const logoComponent = require("./logo-component");
 const stackoverflowComponent = require("./stackoverflow-component");
+const contributorsComponent = require("./contributors-component");
 const createComponent = async (component, params = {}) => {
   const {
     skill,
@@ -20,6 +21,8 @@ const createComponent = async (component, params = {}) => {
     theme,
     textfill,
     animation,
+    repoowner,
+    reponame
   } = params;
   if (component == "linearprogress") {
     if (value && value <= 100 && value >= 0 && skill) {
@@ -103,7 +106,21 @@ const createComponent = async (component, params = {}) => {
     } else {
       return faultComponent();
     }
-  } else {
+  } else if(component=="contributors"){
+      if(reponame != undefined && repoowner != undefined){
+        const val = await fetchData(
+          `https://api.github.com/repos/${repoowner}/${reponame}/stats/contributors`
+        );
+        if(val.message=="Not Found"){
+          return faultComponent();
+        }
+        let data={reponame,repoowner,val};
+        return contributorsComponent(data);
+      }else{
+        return faultComponent();
+      }
+  }  
+  else {
     return faultComponent();
   }
 };

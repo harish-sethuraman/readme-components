@@ -1,6 +1,5 @@
 const createComponent = require("../src/createComponent");
 const componentNotFound = require("../src/component-not-found");
-
 module.exports = async (req, res) => {
   const {
     component,
@@ -18,6 +17,8 @@ module.exports = async (req, res) => {
     theme,
     textfill,
     animation,
+    repoowner,
+    reponame
   } = req.query;
   res.setHeader("Content-Type", "image/svg+xml");
   if (component && req.query) {
@@ -36,6 +37,8 @@ module.exports = async (req, res) => {
       theme,
       textfill,
       animation,
+      repoowner,
+      reponame
     });
     res.send(createcompo);
   } else {
