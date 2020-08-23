@@ -1,4 +1,4 @@
-const constributorsStyle = () => {
+const contributorsStyle = () => {
   return `		   
   a{
     text-decoration: none;
@@ -74,36 +74,8 @@ const constributorsStyle = () => {
     display: flex;
     font-size:10px;
     }
-    .contributor .report .answers{
-    display: flex;
-    flex-direction: column;
-    margin:0 5px;
-    align-items: center;
-    font-weight: 600;
-    }
-    .contributor .report .questions{
-    display: flex;
-    flex-direction: column;
-    margin:0 5px;
-    align-items: center;
-    font-weight: 600;
-    }
-    .contributor .report .reached {
-    display: flex;
-    flex-direction: column;
-    margin:0 5px;
-    align-items: center;
-    font-weight: 600;
-    }
-    .contributor .report .answers::after{
-    content: "Answers"
-    }
-    .contributor .report .questions::after{
-    content: "Questions"
-    }
-    .contributor .report .reached::after{
-    content: "Profile views";
-    white-space: nowrap;
+    .contributor .commits{
+      margin:0px 3px;
     }
     .contributor .report .legend{
     	list-style-type: none;

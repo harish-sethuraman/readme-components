@@ -1,7 +1,11 @@
-const stackoverflowStyles = require("./index.style");
+const contributorsStyle = require("./index.style");
 const imgFetcher = require("../utils/imgFetcher");
 const contributorsComponent = async (data = {}) => {
-return `<div class="container" xmlns="http://www.w3.org/1999/xhtml">
+return `
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="250">
+<style>${contributorsStyle()}</style>
+<foreignObject width="450" height="250">
+<div class="container" xmlns="http://www.w3.org/1999/xhtml">
 <div class="header">
       <div class="repo">
         <img
@@ -39,7 +43,7 @@ return `<div class="container" xmlns="http://www.w3.org/1999/xhtml">
                 harish-sethuraman
             </a>
           </span>
-          <span class="location">india, tamil nadu</span>
+          <span class="location"></span>
         </div>
       </div>
       <div class="report">
@@ -68,7 +72,7 @@ return `<div class="container" xmlns="http://www.w3.org/1999/xhtml">
                 amaresh-s-m
             </a>
           </span>
-          <span class="location">india, tamil nadu</span>
+          <span class="location"></span>
         </div>
       </div>
       <div class="report">
@@ -85,6 +89,9 @@ return `<div class="container" xmlns="http://www.w3.org/1999/xhtml">
       </div>
       </div>
     </div>
-      </div>`;
+      </div>
+      </foreignObject>
+      </svg>
+      `;
 }
 module.exports=contributorsComponent;
