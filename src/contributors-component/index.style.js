@@ -92,7 +92,6 @@ const contributorsStyle = () => {
     border-radius: 2px;
     box-shadow: inset 0 0 0 1px rgba(27,31,35,.04);
     }
-
     .dark-card{
         color:#f6f6f6;
         background-color:#2a2a2a;
