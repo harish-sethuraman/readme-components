@@ -66,13 +66,13 @@ const stackoverflowStyle = (fill, textfill) => {
     font-weight: 600;
     }
     .section1 .report .answers::after{
-    content: "answers"
+    content: "Answers"
     }
     .section1 .report .questions::after{
-    content: "questions"
+    content: "Questions"
     }
     .section1 .report .reached::after{
-    content: "profile views";
+    content: "Profile views";
     white-space: nowrap;
     }
     .section2{
