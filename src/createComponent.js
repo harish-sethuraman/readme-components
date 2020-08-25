@@ -5,6 +5,8 @@ const fetchData = require("./utils/dataFetcher");
 const logoComponent = require("./logo-component");
 const stackoverflowComponent = require("./stackoverflow-component");
 const contributorsComponent = require("./contributors-component");
+const quoteComponent = require("./quotes-component");
+
 const createComponent = async (component, params = {}) => {
   const {
     skill,
@@ -83,7 +85,7 @@ const createComponent = async (component, params = {}) => {
     }
   } else if (component == "logo") {
     if (logo != undefined) {
-      return logoComponent(logo, fill, text, textfill,animation);
+      return logoComponent(logo, fill, text, textfill, animation);
     } else {
       return faultComponent();
     }
@@ -120,7 +122,13 @@ const createComponent = async (component, params = {}) => {
         return faultComponent();
       }
   }  
-  else {
+   else if (component == "quote") {
+    let min = 0,
+      max = 1643;
+    const quotes = await fetchData("https://type.fit/api/quotes");
+    console.log(quotes);
+    return quoteComponent(quotes[Math.floor(Math.random() * (max - min + 1)) + min]);
+  } else {
     return faultComponent();
   }
 };
