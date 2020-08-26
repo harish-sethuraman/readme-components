@@ -1,8 +1,12 @@
 <p align="center">
  <h2 align="center">Readme Components</h2>
- <p align="center">Components that make your readme more colorful !</p>
+ <p align="center"><img style="margin-bottom:-10px; height: 30px; width:30px;  " src="https://readme-components.vercel.app/api?component=logo&logo=react&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A&text=false&animation=spin"/>
+ Components that make your readme more colorful !
+<img style="margin-bottom:-10px; height: 30px; width:30px;  margin-left: 10px;" src="https://readme-components.vercel.app/api?component=logo&logo=react&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A&text=false&animation=spin"/></p>
 </p>
 <hr>
+
+*We have made some components for now and more coming soon !*
 
 # components
 - [Linear Progress](#linear-progress)
@@ -63,10 +67,14 @@
  *Feel bored with the same style ? There are much more styles [here](https://github.com/harish-sethuraman/readme-components/blob/master/docs/experienceComponent.md)*
 
  # Support
- - Wanna contribute ? Fork it :heart:
+ - Wanna contribute ? Fork it :purple_heart:
+ - New designs are welcome too create an issue for new designs too.
  - You can add new components through pull requests.
  - You can also report bugs that you find by issues.
  - Component requests are also welcome.
  - Love the project ? Star it !
 
+
+An<a><img style="margin-bottom: -35px; margin-left: 10px;" src="https://readme-components.vercel.app/api?component=logo&logo=javascript&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A&text=false"/></a>
+App :purple_heart:
 
