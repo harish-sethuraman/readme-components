@@ -4,7 +4,6 @@ const commitSVG = require("./commit.svg")
 const contributorsComponent = async (data = {}) => {
 
   let {val,repoowner,reponame}=data;
-  console.log(val.length);
 let content=``;
 let count=0;
   val.map((user)=>{  

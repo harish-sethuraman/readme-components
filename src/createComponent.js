@@ -24,7 +24,9 @@ const createComponent = async (component, params = {}) => {
     textfill,
     animation,
     repoowner,
-    reponame
+    reponame,
+    svgfill,
+    desc,
   } = params;
   if (component == "linearprogress") {
     if (value && value <= 100 && value >= 0 && skill) {
@@ -85,7 +87,7 @@ const createComponent = async (component, params = {}) => {
     }
   } else if (component == "logo") {
     if (logo != undefined) {
-      return logoComponent(logo, fill, text, textfill, animation);
+      return logoComponent(logo, fill, text, textfill, animation, svgfill,desc);
     } else {
       return faultComponent();
     }
@@ -108,26 +110,26 @@ const createComponent = async (component, params = {}) => {
     } else {
       return faultComponent();
     }
-  } else if(component=="contributors"){
-      if(reponame != undefined && repoowner != undefined){
-        const val = await fetchData(
-          `https://api.github.com/repos/${repoowner}/${reponame}/stats/contributors`
-        );
-        if(val.message=="Not Found"){
-          return faultComponent();
-        }
-        let data={reponame,repoowner,val};
-        return contributorsComponent(data);
-      }else{
+  } else if (component == "contributors") {
+    if (reponame != undefined && repoowner != undefined) {
+      const val = await fetchData(
+        `https://api.github.com/repos/${repoowner}/${reponame}/stats/contributors`
+      );
+      if (val.message == "Not Found") {
         return faultComponent();
       }
-  }  
-   else if (component == "quote") {
+      let data = { reponame, repoowner, val };
+      return contributorsComponent(data);
+    } else {
+      return faultComponent();
+    }
+  } else if (component == "quote") {
     let min = 0,
       max = 1643;
     const quotes = await fetchData("https://type.fit/api/quotes");
-    console.log(quotes);
-    return quoteComponent(quotes[Math.floor(Math.random() * (max - min + 1)) + min]);
+    return quoteComponent(
+      quotes[Math.floor(Math.random() * (max - min + 1)) + min]
+    );
   } else {
     return faultComponent();
   }

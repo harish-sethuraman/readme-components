@@ -18,11 +18,13 @@ module.exports = async (req, res) => {
     textfill,
     animation,
     repoowner,
-    reponame
+    reponame,
+    svgfill,
+    desc,
   } = req.query;
   res.setHeader("Content-Type", "image/svg+xml");
   if (component && req.query) {
-    let createcompo = await createComponent(component, {
+    let createcomponent = await createComponent(component, {
       skill,
       value,
       design,
@@ -38,9 +40,11 @@ module.exports = async (req, res) => {
       textfill,
       animation,
       repoowner,
-      reponame
+      reponame,
+      svgfill,
+      desc,
     });
-    res.send(createcompo);
+    res.send(createcomponent);
   } else {
     res.send(componentNotFound());
   }

@@ -1,15 +1,20 @@
-const colorFiller  = require('../utils/colorFiller')
+const colorFiller = require("../utils/colorFiller");
 
-const logoComponentStyles = (fill, textfill, animation) => {
+const logoComponentStyles = (fill, textfill, animation, svgfill) => {
   return `
     foreignObject svg {
         width: 30px;
         height: 30px;
         line-height: 40px;
-        border-radius: 50%;
         margin-top:2px;
         text-align: center;
-        fill: ${textfill ? `#${textfill}` : "white"};
+        fill: ${
+          svgfill
+            ? colorFiller(svgfill)
+            : textfill
+            ? colorFiller(textfill)
+            : "white"
+        };
         animation : ${animation ? `${animation} 4s linear infinite` : ""};
       }
 
