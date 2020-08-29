@@ -128,7 +128,9 @@ const createComponent = async (component, params = {}) => {
       max = 1643;
     const quotes = await fetchData("https://type.fit/api/quotes");
     return quoteComponent(
-      quotes[Math.floor(Math.random() * (max - min + 1)) + min]
+      quotes[Math.floor(Math.random() * (max - min + 1)) + min],
+      fill,
+      textfill
     );
   } else {
     return faultComponent();

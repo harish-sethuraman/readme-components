@@ -1,4 +1,6 @@
-const UserDpStyles = () => {
+const colorFiller = require('../utils/colorFiller')
+
+const UserDpStyles = (textfill) => {
   return `.userdp
     {
         height:30px;
@@ -9,8 +11,10 @@ const UserDpStyles = () => {
     }
     .text
     {
-        padding-top:5px;
+        color: ${textfill!=undefined ? colorFiller(textfill) : 'violet'};
+        padding-top: 5px;
         display: block;
+        font-weight: 800;
     }
     `;
 };
