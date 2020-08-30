@@ -6,6 +6,7 @@ const logoComponent = require("./logo-component");
 const stackoverflowComponent = require("./stackoverflow-component");
 const contributorsComponent = require("./contributors-component");
 const quoteComponent = require("./quotes-component");
+const userDp = require("./user-dp");
 
 const createComponent = async (component, params = {}) => {
   const {
@@ -28,112 +29,131 @@ const createComponent = async (component, params = {}) => {
     svgfill,
     desc,
   } = params;
-  if (component == "linearprogress") {
-    if (value && value <= 100 && value >= 0 && skill) {
-      if (
-        [
-          "aqua",
-          "copper",
-          "candy",
-          "neon",
-          "zigzag",
-          "diamond",
-          "shine",
-          "hearts",
-          "sparkle",
-        ].includes(design)
-      ) {
-        return linearProgress(skill, value, design, fill);
-      } else {
-        let design = undefined;
-        return linearProgress(skill, value, design, fill);
-      }
-    } else {
-      return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
-            <foreignObject width="250" height="100">
-              <div xmlns="http://www.w3.org/1999/xhtml">
-                <h1>skill or value not found</h1>
-              </div>
-            </foreignObject>
-          </svg>`;
-    }
-  } else if (component == "experience") {
-    if (company != undefined) {
-      const val = await fetchData(
-        `https://autocomplete.clearbit.com/v1/companies/suggest?query=${company}`
-      );
-      if (val.length > 0) {
-        const data = val[0];
-        data["role"] = role;
-        data["location"] = location;
-        data["fill"] = fill;
-        data["textfill"] = textfill;
-        if (duration != undefined) {
-          if (duration.includes("m") || duration.includes("M")) {
-            let value = duration.replace(/[A-Za-z]/, "");
-            data["duration"] = value + " months";
-          } else {
-            let value = duration.replace(/[A-Za-z]/, "");
-            data["duration"] = value + " years";
-          }
+  switch (component) {
+    case "linearprogress":
+      if (value && value <= 100 && value >= 0 && skill) {
+        if (
+          [
+            "aqua",
+            "copper",
+            "candy",
+            "neon",
+            "zigzag",
+            "diamond",
+            "shine",
+            "hearts",
+            "sparkle",
+          ].includes(design)
+        ) {
+          return linearProgress(skill, value, design, fill);
+        } else {
+          let design = undefined;
+          return linearProgress(skill, value, design, fill);
         }
+      } else {
+        return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
+              <foreignObject width="250" height="100">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                  <h1>skill or value not found</h1>
+                </div>
+              </foreignObject>
+            </svg>`;
+      }
+      break;
+    case "experience":
+      if (company != undefined) {
+        const val = await fetchData(
+          `https://autocomplete.clearbit.com/v1/companies/suggest?query=${company}`
+        );
+        if (val.length > 0) {
+          const data = val[0];
+          data["role"] = role;
+          data["location"] = location;
+          data["fill"] = fill;
+          data["textfill"] = textfill;
+          if (duration != undefined) {
+            if (duration.includes("m") || duration.includes("M")) {
+              let value = duration.replace(/[A-Za-z]/, "");
+              data["duration"] = value + " months";
+            } else {
+              let value = duration.replace(/[A-Za-z]/, "");
+              data["duration"] = value + " years";
+            }
+          }
 
-        return experienceComponent(data);
+          return experienceComponent(data);
+        } else {
+          return faultComponent();
+        }
       } else {
         return faultComponent();
       }
-    } else {
-      return faultComponent();
-    }
-  } else if (component == "logo") {
-    if (logo != undefined) {
-      return logoComponent(logo, fill, text, textfill, animation, svgfill,desc);
-    } else {
-      return faultComponent();
-    }
-  } else if (component == "stackoverflow") {
-    if (stackoverflowid != undefined) {
-      const val = await fetchData(
-        `https://api.stackexchange.com/2.2/users/${stackoverflowid}?order=desc&sort=reputation&site=stackoverflow&filter=!b6Aub2or8vkePb`
-      );
-      if (val.error_id == "400") {
-        return faultComponent();
-      } else {
-        let data = {
-          val,
-          theme,
+      break;
+    case "logo":
+      if (logo != undefined) {
+        return logoComponent(
+          logo,
           fill,
+          text,
           textfill,
-        };
-        return stackoverflowComponent(data);
-      }
-    } else {
-      return faultComponent();
-    }
-  } else if (component == "contributors") {
-    if (reponame != undefined && repoowner != undefined) {
-      const val = await fetchData(
-        `https://api.github.com/repos/${repoowner}/${reponame}/stats/contributors`
-      );
-      if (val.message == "Not Found") {
+          animation,
+          svgfill,
+          desc
+        );
+      } else {
         return faultComponent();
       }
-      let data = { reponame, repoowner, val };
-      return contributorsComponent(data);
-    } else {
+      break;
+    case "stackoverflow":
+      if (stackoverflowid != undefined) {
+        const val = await fetchData(
+          `https://api.stackexchange.com/2.2/users/${stackoverflowid}?order=desc&sort=reputation&site=stackoverflow&filter=!b6Aub2or8vkePb`
+        );
+        if (val.error_id == "400") {
+          return faultComponent();
+        } else {
+          let data = {
+            val,
+            theme,
+            fill,
+            textfill,
+          };
+          return stackoverflowComponent(data);
+        }
+      } else {
+        return faultComponent();
+      }
+      break;
+    case "contributors":
+      if (reponame != undefined && repoowner != undefined) {
+        const val = await fetchData(
+          `https://api.github.com/repos/${repoowner}/${reponame}/stats/contributors`
+        );
+        if (val.message == "Not Found") {
+          return faultComponent();
+        }
+        let data = { reponame, repoowner, val };
+        return contributorsComponent(data);
+      } else {
+        return faultComponent();
+      }
+      break;
+    case "quote":
+      let min = 0,
+        max = 1643;
+      const quotes = await fetchData("https://type.fit/api/quotes");
+      return quoteComponent(
+        quotes[Math.floor(Math.random() * (max - min + 1)) + min],
+        fill,
+        textfill
+      );
+      break;
+    case "text":
+      return userDp(text);
+      break;
+    default:
       return faultComponent();
-    }
-  } else if (component == "quote") {
-    let min = 0,
-      max = 1643;
-    const quotes = await fetchData("https://type.fit/api/quotes");
-    return quoteComponent(
-      quotes[Math.floor(Math.random() * (max - min + 1)) + min],
-      fill,
-      textfill
-    );
-  } else {
-    return faultComponent();
+      break;
   }
 };
 

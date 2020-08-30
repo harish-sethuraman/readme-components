@@ -33,7 +33,7 @@ const quotesComponentStyles = (fill,textfill) => {
         padding-top: 20px;
         padding-left: 20px;
         padding-right: 20px;
-        font:Open Sans,sans-serif;
+        font-family :Open Sans,sans-serif;
         color: ${textfill!=undefined ? colorFiller(textfill) : 'white'};
     }
     .author
@@ -46,6 +46,7 @@ const quotesComponentStyles = (fill,textfill) => {
     }
     .authorname
     {
+        font-family :Open Sans,sans-serif;
         color:${textfill!=undefined ? colorFiller(textfill) : 'white'};
         padding-top: 5px;
         padding-left: 5px;
