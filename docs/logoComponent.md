@@ -33,6 +33,20 @@
 
 ![css progressbar](https://readme-components.vercel.app/api?component=logo&logo=react&textfill=000000&fill=ffc0cd)
 
+>Pass Emoji and desc to the component
+
+>you can pass `&logo=🥰` and `&desc=the description` and overwrite the logo and the description.
+>The emoji can be used without description seperately
+
+> `![techstack logo](https://readme-components.vercel.app/api?component=logo&logo=🥰&desc=helloworld&fill=ffc0cd)`
+
+![css progressbar](https://readme-components.vercel.app/api?component=logo&logo=🥰&desc=helloworld&fill=ffc0cd)
+
+> `![techstack logo](https://readme-components.vercel.app/api?component=logo&logo=🥰&fill=ffc0cd)`
+
+![css progressbar](https://readme-components.vercel.app/api?component=logo&logo=🥰&fill=ffc0cd)
+
+
 *Only the logo is enough for you ? then just pass the text param as false and we will give you the icon alone!*
 
 > Without text
