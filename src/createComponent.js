@@ -7,6 +7,7 @@ const stackoverflowComponent = require("./stackoverflow-component");
 const contributorsComponent = require("./contributors-component");
 const quoteComponent = require("./quotes-component");
 const userDp = require("./user-dp");
+const componentNotFound =require("./component-not-found")
 
 const createComponent = async (component, params = {}) => {
   const {
@@ -152,7 +153,7 @@ const createComponent = async (component, params = {}) => {
       return userDp(text);
       break;
     default:
-      return faultComponent();
+      return componentNotFound();
       break;
   }
 };
