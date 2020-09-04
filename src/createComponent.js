@@ -150,7 +150,7 @@ const createComponent = async (component, params = {}) => {
       );
       break;
     case "text":
-      return userDp(text);
+      return userDp(text,textfill,fill);
       break;
     default:
       return componentNotFound();

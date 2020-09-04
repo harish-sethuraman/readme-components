@@ -7,6 +7,7 @@ const UserDpStyles = (textfill,fill) => {
         width:30px;
         border-radius:50%;
         text-align: center;
+        ${fill!=undefined ? `background : ${colorFiller(fill)} !important` : '' }
     }
     .text
     {
