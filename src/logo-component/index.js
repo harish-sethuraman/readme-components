@@ -5,13 +5,13 @@ const faultComponent = require("../fault-component");
 const logoComponent = (logo, fill, text, textfill,animation,svgfill,desc) => {
 if(!logo.match(/^[a-z]*$/) || simpleIcons.get(logo)!=undefined){
     return `
-    <svg height="70" width="${
+    <svg height="60" width="${
       text == "false" ? "70" : `${70 + (desc!= undefined ? desc.length * 8.5 : logo.length * 8.5) + 10}`
     }" xmlns="http://www.w3.org/2000/svg">
     <style>
     ${logoComponentStyles(fill, textfill,animation,svgfill)}
     </style>
-      <foreignObject height="70" width="${
+      <foreignObject height="60" width="${
         text == "false" ? "70" : `${70 + (desc!= undefined ? desc.length * 8.5 : logo.length * 8.5) + 10}`
       }">
       <div class="gradient-btn btn-color" xmlns="http://www.w3.org/1999/xhtml">
