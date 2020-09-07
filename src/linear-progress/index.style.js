@@ -112,7 +112,7 @@ const linearProgressStyles = (fill, value) => {
     
       /* Candystripe style */
       .progress.candy .ProgressBars {
-        background-color: #d00;
+        background-color: ${fill!=undefined ? colorFiller(fill) : '#d00'};
         box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.3) inset;
         background-image: linear-gradient(
           -45deg,
