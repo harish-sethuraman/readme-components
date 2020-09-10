@@ -1,13 +1,18 @@
 const contributorsStyle = require("./index.style");
 const imgFetcher = require("../utils/imgFetcher");
 const commitSVG = require("./commit.svg")
+const faultComponent = require('../fault-component')
+
 const contributorsComponent = async (data = {}) => {
 
   let {val,repoowner,reponame}=data;
+  console.log(val)
+  if(val.documentation_url !="https://developer.github.com/v3/#rate-limiting")
+  {
 let content=``;
 let count=0;
-  val.map((user)=>{  
-    count++;   
+  val.map((user)=>{
+    count++;
     content=` <div><div class="contributor">
   <div class="profile">
     <img
@@ -70,5 +75,9 @@ return `
       </foreignObject>
       </svg>
       `;
+  }
+  else{
+    return faultComponent();
+  }
 }
 module.exports=contributorsComponent;
