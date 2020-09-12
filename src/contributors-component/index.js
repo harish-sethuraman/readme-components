@@ -1,29 +1,29 @@
 const contributorsStyle = require("./index.style");
 const imgFetcher = require("../utils/imgFetcher");
-const commitSVG = require("./commit.svg")
-const faultComponent = require('../fault-component')
+const commitSVG = require("./commit.svg");
+const faultComponent = require("../fault-component");
 
 const contributorsComponent = async (data = {}) => {
-
-  let {val,repoowner,reponame}=data;
-  console.log(val)
-  if(val.documentation_url !="https://developer.github.com/v3/#rate-limiting")
-  {
-let content=``;
-let count=0;
-  val.map((user)=>{
-    count++;
-    content=` <div><div class="contributor">
+  let { val, reponame } = data;
+  if (
+    val.documentation_url != "https://developer.github.com/v3/#rate-limiting"
+  ) {
+    let content = ``;
+    let count = 0;
+    val.map((user) => {
+      count++;
+      content =
+        ` <div><div class="contributor">
   <div class="profile">
     <img
       class="image"
-      src="${user['author']['avatar_url']}"
+      src="${user["author"]["avatar_url"]}"
       alt="Profile image"
     ></img>
     <div class="userdetails">
       <span class="name">
         <a target="_blank" href="">
-          ${user['author']['login']}
+          ${user["author"]["login"]}
         </a>
       </span>
       <span class="location"></span>
@@ -41,11 +41,12 @@ let count=0;
   </div>
 </div>
 <div class="divider"></div>
-</div> `+content});
-return `
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="${50+46*count}">
+</div> ` + content;
+    });
+    return `
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="${50 + 46 * count}">
 <style>${contributorsStyle()}</style>
-<foreignObject width="450" height="${50+46*count}">
+<foreignObject width="450" height="${50 + 46 * count}">
 <div class="container" xmlns="http://www.w3.org/1999/xhtml">
 <div class="header">
       <div class="repo">
@@ -75,9 +76,8 @@ return `
       </foreignObject>
       </svg>
       `;
-  }
-  else{
+  } else {
     return faultComponent();
   }
-}
-module.exports=contributorsComponent;
+};
+module.exports = contributorsComponent;
