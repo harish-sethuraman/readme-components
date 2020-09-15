@@ -7,7 +7,8 @@ const stackoverflowComponent = require("./stackoverflow-component");
 const contributorsComponent = require("./contributors-component");
 const quoteComponent = require("./quotes-component");
 const userDp = require("./user-dp");
-const componentNotFound =require("./component-not-found")
+const componentNotFound = require("./component-not-found");
+const Links = require("./utils/links");
 
 const createComponent = async (component, params = {}) => {
   const {
@@ -63,9 +64,7 @@ const createComponent = async (component, params = {}) => {
       break;
     case "experience":
       if (company != undefined) {
-        const val = await fetchData(
-          `https://autocomplete.clearbit.com/v1/companies/suggest?query=${company}`
-        );
+        const val = await fetchData(Links({ company }).company);
         if (val.length > 0) {
           const data = val[0];
           data["role"] = role;
@@ -108,7 +107,7 @@ const createComponent = async (component, params = {}) => {
     case "stackoverflow":
       if (stackoverflowid != undefined) {
         const val = await fetchData(
-          `https://api.stackexchange.com/2.2/users/${stackoverflowid}?order=desc&sort=reputation&site=stackoverflow&filter=!b6Aub2or8vkePb`
+          Links({ stackoverflowid }).stackoverflowapi
         );
         if (val.error_id == "400") {
           return faultComponent();
@@ -127,9 +126,7 @@ const createComponent = async (component, params = {}) => {
       break;
     case "contributors":
       if (reponame != undefined && repoowner != undefined) {
-        const val = await fetchData(
-          `https://api.github.com/repos/${repoowner}/${reponame}/stats/contributors`
-        );
+        const val = await fetchData(Links({ reponame, repoowner }).githubapi);
         if (val.message == "Not Found") {
           return faultComponent();
         }
@@ -142,7 +139,7 @@ const createComponent = async (component, params = {}) => {
     case "quote":
       let min = 0,
         max = 1643;
-      const quotes = await fetchData("https://type.fit/api/quotes");
+      const quotes = await fetchData(Links().quotesapi);
       return quoteComponent(
         quotes[Math.floor(Math.random() * (max - min + 1)) + min],
         fill,
@@ -150,7 +147,7 @@ const createComponent = async (component, params = {}) => {
       );
       break;
     case "text":
-      return userDp(text,textfill,fill);
+      return userDp(text, textfill, fill);
       break;
     default:
       return componentNotFound();
