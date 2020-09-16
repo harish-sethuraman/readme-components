@@ -2,6 +2,7 @@ const contributorsStyle = require("./index.style");
 const imgFetcher = require("../utils/imgFetcher");
 const commitSVG = require("./commit.svg");
 const faultComponent = require("../fault-component");
+const Links = require("../utils/links")
 
 const contributorsComponent = async (data = {}) => {
   let { val, reponame } = data;
@@ -52,7 +53,7 @@ const contributorsComponent = async (data = {}) => {
       <div class="repo">
         <img
           class="image"
-          src="https://static.thenounproject.com/png/368566-200.png"
+          src="${Links().assets.repoicon}"
           alt="Profile image"
         ></img>
         <div class="repo-details">
@@ -66,7 +67,7 @@ const contributorsComponent = async (data = {}) => {
       <div class="github-icon">
               <img
           class="image"
-          src="https://image.flaticon.com/icons/png/512/25/25231.png"
+          src="${Links().assets.githubicon}"
           alt="Profile image"
         ></img>
       </div>

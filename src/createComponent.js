@@ -64,7 +64,7 @@ const createComponent = async (component, params = {}) => {
       break;
     case "experience":
       if (company != undefined) {
-        const val = await fetchData(Links({ company }).company);
+        const val = await fetchData(Links({ company }).api.company);
         if (val.length > 0) {
           const data = val[0];
           data["role"] = role;
@@ -107,7 +107,7 @@ const createComponent = async (component, params = {}) => {
     case "stackoverflow":
       if (stackoverflowid != undefined) {
         const val = await fetchData(
-          Links({ stackoverflowid }).stackoverflowapi
+          Links({ stackoverflowid }).api.stackoverflow
         );
         if (val.error_id == "400") {
           return faultComponent();
@@ -126,7 +126,7 @@ const createComponent = async (component, params = {}) => {
       break;
     case "contributors":
       if (reponame != undefined && repoowner != undefined) {
-        const val = await fetchData(Links({ reponame, repoowner }).githubapi);
+        const val = await fetchData(Links({ reponame, repoowner }).api.github);
         if (val.message == "Not Found") {
           return faultComponent();
         }
@@ -139,7 +139,7 @@ const createComponent = async (component, params = {}) => {
     case "quote":
       let min = 0,
         max = 1643;
-      const quotes = await fetchData(Links().quotesapi);
+      const quotes = await fetchData(Links().api.quotes);
       return quoteComponent(
         quotes[Math.floor(Math.random() * (max - min + 1)) + min],
         fill,
