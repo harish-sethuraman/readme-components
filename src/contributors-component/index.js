@@ -11,14 +11,14 @@ const contributorsComponent = async (data = {}) => {
   ) {
     let content = ``;
     let count = 0;
-    val.map((user) => {
+    await Promise.all(val.map(async (user, key) => {
       count++;
       content =
         ` <div><div class="contributor">
   <div class="profile">
     <img
       class="image"
-      src="${user["author"]["avatar_url"]}"
+      src="${await imgFetcher(user["author"]["avatar_url"])}"
       alt="Profile image"
     ></img>
     <div class="userdetails">
@@ -43,7 +43,8 @@ const contributorsComponent = async (data = {}) => {
 </div>
 <div class="divider"></div>
 </div> ` + content;
-    });
+    }))
+
     return `
 <svg xmlns="http://www.w3.org/2000/svg" width="450" height="${50 + 46 * count}">
 <style>${contributorsStyle()}</style>
@@ -72,7 +73,7 @@ const contributorsComponent = async (data = {}) => {
         ></img>
       </div>
     </div>
-    ${content}    
+    ${content}
      </div>
       </foreignObject>
       </svg>
