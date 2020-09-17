@@ -8,6 +8,7 @@
 
 *We have made some components for now and more coming soon !*
 
+*To see how I have used these components visit [this](https://github.com/harish-sethuraman)*
 # components
 - [Linear Progress](#linear-progress)
 - [Logo Component](#logo-component)
