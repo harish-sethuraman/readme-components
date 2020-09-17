@@ -30,6 +30,7 @@ const createComponent = async (component, params = {}) => {
     reponame,
     svgfill,
     desc,
+    scale
   } = params;
   switch (component) {
     case "linearprogress":
@@ -98,7 +99,8 @@ const createComponent = async (component, params = {}) => {
           textfill,
           animation,
           svgfill,
-          desc
+          desc,
+          scale
         );
       } else {
         return faultComponent();
