@@ -30,7 +30,7 @@ const createComponent = async (component, params = {}) => {
     reponame,
     svgfill,
     desc,
-    scale
+    scale,
   } = params;
   switch (component) {
     case "linearprogress":
@@ -92,7 +92,7 @@ const createComponent = async (component, params = {}) => {
       break;
     case "logo":
       if (logo != undefined) {
-        return logoComponent(
+        return logoComponent({
           logo,
           fill,
           text,
@@ -100,8 +100,8 @@ const createComponent = async (component, params = {}) => {
           animation,
           svgfill,
           desc,
-          scale
-        );
+          scale,
+        });
       } else {
         return faultComponent();
       }

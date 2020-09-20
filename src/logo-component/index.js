@@ -2,17 +2,9 @@ const logoComponentStyles = require("./index.style");
 const simpleIcons = require("simple-icons");
 const faultComponent = require("../fault-component");
 
-const logoComponent = (
-  logo,
-  fill,
-  text,
-  textfill,
-  animation,
-  svgfill,
-  desc,
-  scale
-) => {
-  console.log(logo);
+const logoComponent = (data = {}) => {
+  const { logo, fill, text, textfill, animation, svgfill, desc, scale } = data;
+  
   if (!logo.match(/^[a-z]*$/) || simpleIcons.get(logo) != undefined) {
     return `
     <svg  height="${scale != undefined ? 60 * scale : "60"}" width="${
