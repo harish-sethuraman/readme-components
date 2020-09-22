@@ -48,10 +48,10 @@ const createComponent = async (component, params = {}) => {
             "sparkle",
           ].includes(design)
         ) {
-          return linearProgress(skill, value, design, fill);
+          return linearProgress({skill, value, design, fill});
         } else {
           let design = undefined;
-          return linearProgress(skill, value, design, fill);
+          return linearProgress({skill, value, design, fill});
         }
       } else {
         return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">

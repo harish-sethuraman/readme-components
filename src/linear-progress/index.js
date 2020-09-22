@@ -1,9 +1,10 @@
 const linearProgressStyles = require("./index.style");
-const linearProgress = (skill, value, design, fill) => {
+const linearProgress = (data = {}) => {
+  const { skill, value, design, fill } = data;
   return `
 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
 <style>
-${linearProgressStyles(fill,value)}
+${linearProgressStyles(fill, value)}
 </style>
   <foreignObject width="250" height="100">
   <div xmlns="http://www.w3.org/1999/xhtml">
