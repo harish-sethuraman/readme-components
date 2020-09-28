@@ -1,12 +1,11 @@
-
 const colorFiller = require("../utils/colorFiller");
 
-const quotesComponentStyles = (fill,textfill) => {
+const quotesComponentStyles = (fill, textfill) => {
   return `
     .container
     {
         width:200px;
-        background: ${fill ? colorFiller(fill) : '#11cdef'};
+        background: ${fill ? colorFiller(fill) : "#11cdef"};
         display:flex;
         flex-direction:column;
         border-radius:5px;
@@ -34,7 +33,7 @@ const quotesComponentStyles = (fill,textfill) => {
         padding-left: 20px;
         padding-right: 20px;
         font-family :Open Sans,sans-serif;
-        color: ${textfill!=undefined ? colorFiller(textfill) : 'white'};
+        color: ${textfill != undefined ? colorFiller(textfill) : "white"};
     }
     .author
     {
@@ -47,7 +46,7 @@ const quotesComponentStyles = (fill,textfill) => {
     .authorname
     {
         font-family :Open Sans,sans-serif;
-        color:${textfill!=undefined ? colorFiller(textfill) : 'white'};
+        color:${textfill != undefined ? colorFiller(textfill) : "white"};
         padding-top: 5px;
         padding-left: 5px;
     }

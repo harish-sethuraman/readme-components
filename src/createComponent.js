@@ -48,10 +48,10 @@ const createComponent = async (component, params = {}) => {
             "sparkle",
           ].includes(design)
         ) {
-          return linearProgress({skill, value, design, fill});
+          return linearProgress({ skill, value, design, fill });
         } else {
           let design = undefined;
-          return linearProgress({skill, value, design, fill});
+          return linearProgress({ skill, value, design, fill });
         }
       } else {
         return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
@@ -62,7 +62,6 @@ const createComponent = async (component, params = {}) => {
               </foreignObject>
             </svg>`;
       }
-      break;
     case "experience":
       if (company != undefined) {
         const val = await fetchData(Links({ company }).api.company);
@@ -89,7 +88,6 @@ const createComponent = async (component, params = {}) => {
       } else {
         return faultComponent();
       }
-      break;
     case "logo":
       if (logo != undefined) {
         return logoComponent({
@@ -105,7 +103,6 @@ const createComponent = async (component, params = {}) => {
       } else {
         return faultComponent();
       }
-      break;
     case "stackoverflow":
       if (stackoverflowid != undefined) {
         const val = await fetchData(
@@ -114,46 +111,35 @@ const createComponent = async (component, params = {}) => {
         if (val.error_id == "400") {
           return faultComponent();
         } else {
-          let data = {
+          return stackoverflowComponent({
             val,
             theme,
             fill,
             textfill,
-          };
-          return stackoverflowComponent(data);
+          });
         }
       } else {
         return faultComponent();
       }
-      break;
     case "contributors":
       if (reponame != undefined && repoowner != undefined) {
         const val = await fetchData(Links({ reponame, repoowner }).api.github);
         if (val.message == "Not Found") {
           return faultComponent();
         }
-        let data = { reponame, repoowner, val };
-        return contributorsComponent(data);
+        return contributorsComponent({ reponame, repoowner, val });
       } else {
         return faultComponent();
       }
-      break;
     case "quote":
       let min = 0,
         max = 1643;
       const quotes = await fetchData(Links().api.quotes);
-      return quoteComponent(
-        quotes[Math.floor(Math.random() * (max - min + 1)) + min],
-        fill,
-        textfill
-      );
-      break;
+      return quoteComponent({ ...quotes[Math.floor(Math.random() * (max - min + 1)) + min],fill,textfill});
     case "text":
-      return userDp(text, textfill, fill);
-      break;
+      return userDp({text, textfill, fill});
     default:
       return componentNotFound();
-      break;
   }
 };
 
