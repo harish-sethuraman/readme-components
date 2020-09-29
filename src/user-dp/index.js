@@ -1,9 +1,9 @@
 const userDpStyles = require("./index.style");
 
 const userDp = (data = {}) => {
-  console.log(data);
   const { text, textfill, fill } = data;
-  return `
+  if (text.length == 1) {
+    return `
   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30">
     <foreignObject width="30" height="30">
     <style>${userDpStyles(textfill, fill)}</style>
@@ -14,5 +14,26 @@ const userDp = (data = {}) => {
     </div>
     </foreignObject>
     </svg>`;
+  } else {
+    let word = "";
+    [...text].map((obj) => {
+      word =
+        word +
+        `<div class="userdp ${
+          obj != null ? obj.toLowerCase() : "u"
+        }"><span class="text">${obj != null ? obj : "U"}</span></div>`;
+    });
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="${
+      30 * text.length
+    }" height="30">
+    <foreignObject width="${30 * text.length}" height="30">
+    <style>${userDpStyles(textfill, fill)}</style>
+    <div style="display :flex;"  xmlns="http://www.w3.org/1999/xhtml">
+    ${word}
+    </div>
+    </foreignObject>
+    </svg>`;
+  }
 };
+
 module.exports = userDp;
