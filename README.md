@@ -67,6 +67,9 @@
 
  *Feel bored with the same style ? There are much more styles [here](https://github.com/harish-sethuraman/readme-components/blob/master/docs/experienceComponent.md)*
 
+ # Contributions 
+ For details regarding contribution guidelines read [contributions.md](https://github.com/harish-sethuraman/readme-components/contribution.md)
+
  # Support
  - Wanna contribute ? Fork it :purple_heart:
  - New designs are welcome too create an issue for new designs too.
