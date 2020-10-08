@@ -24,7 +24,7 @@
 
 > `![button](https://readme-components.vercel.app/api?component=button&text=Button&fill=whitelinear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)`
 
-![button](https://readme-components.vercel.app/api?component=button&text=Button&fill=whitelinear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)
+![button](https://readme-components.vercel.app/api?component=button&text=Button&fill=linear-gradient%2862deg%2C%20%238EC5FC%200%25%2C%20%23E0C3FC%20100%25%29%3B%0A)
 
 
 # Different Button Sizes
@@ -33,8 +33,8 @@
 
 > `![button](https://readme-components.vercel.app/api?component=button&text=Button&size=small`
 
-![button](https://readme-components.vercel.app/api?component=button&text=Button&size=small)
+![button](https://readme-components.vercel.app/api?component=button&text=small&scale=small)
 
-![button](https://readme-components.vercel.app/api?component=button&text=Button&size=default)
+![button](https://readme-components.vercel.app/api?component=button&text=default&scale=default)
 
-![button](https://readme-components.vercel.app/api?component=button&text=Button&size=large)
+![button](https://readme-components.vercel.app/api?component=button&text=large&scale=large)
