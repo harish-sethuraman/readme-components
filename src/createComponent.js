@@ -9,6 +9,7 @@ const quoteComponent = require("./quotes-component");
 const userDp = require("./user-dp");
 const componentNotFound = require("./component-not-found");
 const Links = require("./utils/links");
+const Button = require("./button-component")
 
 const createComponent = async (component, params = {}) => {
   const {
@@ -138,6 +139,8 @@ const createComponent = async (component, params = {}) => {
       return quoteComponent({ ...quotes[Math.floor(Math.random() * (max - min + 1)) + min],fill,textfill});
     case "text":
       return userDp({text, textfill, fill});
+    case "button":
+      return Button({fill, scale, text, textfill});
     default:
       return componentNotFound();
   }
