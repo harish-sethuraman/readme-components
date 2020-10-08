@@ -32,9 +32,6 @@ const createComponent = async (component, params = {}) => {
     svgfill,
     desc,
     scale,
-    size,
-    color,
-    textcolor,
   } = params;
   switch (component) {
     case "linearprogress":
@@ -143,7 +140,7 @@ const createComponent = async (component, params = {}) => {
     case "text":
       return userDp({text, textfill, fill});
     case "button":
-      return Button({color, size, text, textcolor});
+      return Button({fill, scale, text, textfill});
     default:
       return componentNotFound();
   }

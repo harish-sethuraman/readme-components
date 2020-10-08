@@ -14,6 +14,7 @@
 - [Logo Component](#logo-component)
 - [Stackoverflow Component](#stackoverflow-component)
 - [Experience Component](#experience-component)
+- [Button Component](#button-component)
 
 >*More component on the way!*
 
@@ -66,6 +67,19 @@
 [![Experience component](https://readme-components.vercel.app/api?component=experience&company=freshworks)](https://github.com/harish-sethuraman/readme-components)
 
  *Feel bored with the same style ? There are much more styles [here](https://github.com/harish-sethuraman/readme-components/blob/master/docs/experienceComponent.md)*
+ 
+ # Button Component
+ *You can use the below code to generate a Button Component*
+ 
+ >*change the `&text=` with the text you want to show in your button*
+
+```md
+[![Button Component](https://readme-components.vercel.app/api?component=button&text=ClickHere)](https://github.com/harish-sethuraman/readme-components)
+```
+
+[![Button Component](https://readme-components.vercel.app/api?component=button&text=ClickHere)](https://github.com/harish-sethuraman/readme-components)
+
+*Feel bored with the same style ? There are much more styles [here](https://github.com/harish-sethuraman/readme-components/blob/master/docs/buttonComponent.md)*
 
  # Contributions 
  For details regarding contribution guidelines read [contributions.md](https://github.com/harish-sethuraman/readme-components/blob/master/CONTRIBUTING.md)

@@ -1,20 +1,20 @@
 const colorFiller = require('../utils/colorFiller')
-const ButtonStyles = (color, size, textcolor) => {
-    color = color || "#007bff";
-    size = size || "default";
-    textcolor = textcolor || "#ffffff";
+const ButtonStyles = (data = {}) => {
+    let {fill, scale, textfill}  = data;
+    fill = fill || "#007bff";
+    textfill = textfill || "#ffffff";
+    scale = scale || "default"
     return `
         .btn{
-          ${ButtonSizeHelper(size)}\
-          color: ${colorFiller(textcolor)};
-          background-color: ${colorFiller(color)};
+          ${ButtonSizeHelper(scale)};
+          color: ${colorFiller(textfill)};
+          background: ${colorFiller(fill)};
           display: inline-block;
           font-weight: 400;
           text-align: center;
           vertical-align: middle;
           border: 1px solid transparent;     
           }
-          
     `
 }
 
