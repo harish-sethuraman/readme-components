@@ -20,7 +20,7 @@ const quoteComponent = (data = {}) => {
       <div class="author">
       <div>${
         author != null
-          ? userDp({ text: author, textfill, fill })
+          ? userDp({ text: author[0], textfill, fill })
           : userDp({ text: "A" })
       }</div>
       <div class="authorname"> ${author != null ? author : "Anonymous"}</div>
