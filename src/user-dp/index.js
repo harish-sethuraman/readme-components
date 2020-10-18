@@ -17,11 +17,18 @@ const userDp = (data = {}) => {
   } else {
     let word = "";
     [...text].map((obj) => {
+      if(obj!=" ")
+      {
       word =
         word +
         `<div class="userdp ${
           obj != null ? obj.toLowerCase() : "u"
         }"><span class="text">${obj != null ? obj : "U"}</span></div>`;
+      }
+      else{
+        word=word+`<div style="width:30px;"><span> </span></div>`;
+      }
+
     });
     return `<svg xmlns="http://www.w3.org/2000/svg" width="${
       30 * text.length
