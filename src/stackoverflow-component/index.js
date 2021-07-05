@@ -16,7 +16,7 @@ const stackoverflowComponent = async (data = {}) => {
   } = val.items[0];
 
   return `
-      <svg xmlns="http://www.w3.org/2000/svg" width="459" height="200">
+      <svg xmlns="http://www.w3.org/2000/svg" width="465" height="200">
     <style>${stackoverflowStyles(fill, textfill)}</style>
       <foreignObject  width="490" height="220">
       <div class="container ${
