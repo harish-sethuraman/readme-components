@@ -2,9 +2,9 @@ const experienceComponentStyles = require("./index.style");
 const durationSVG = require("./duration.svg");
 const roleSVG = require("./role.svg");
 const locationSVG = require("./location.svg");
-const imgFetcher = require('../utils/imgFetcher')
+const imgFetcher = require("../utils/imgFetcher");
 
-const experienceComponent =async (data = {}) => {
+const experienceComponent = async (data = {}) => {
   const { logo, name, duration, role, location, fill, textfill } = data;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${
     role != undefined || duration != undefined || location != undefined

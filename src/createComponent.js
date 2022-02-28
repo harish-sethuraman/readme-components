@@ -7,9 +7,10 @@ const stackoverflowComponent = require("./stackoverflow-component");
 const contributorsComponent = require("./contributors-component");
 const quoteComponent = require("./quotes-component");
 const userDp = require("./user-dp");
+const starRating = require("./star-rating");
 const componentNotFound = require("./component-not-found");
 const Links = require("./utils/links");
-const Button = require("./button-component")
+const Button = require("./button-component");
 
 const createComponent = async (component, params = {}) => {
   const {
@@ -32,6 +33,7 @@ const createComponent = async (component, params = {}) => {
     svgfill,
     desc,
     scale,
+    rating,
   } = params;
   switch (component) {
     case "linearprogress":
@@ -136,11 +138,23 @@ const createComponent = async (component, params = {}) => {
       let min = 0,
         max = 1643;
       const quotes = await fetchData(Links().api.quotes);
-      return quoteComponent({ ...quotes[Math.floor(Math.random() * (max - min + 1)) + min],fill,textfill});
+      return quoteComponent({
+        ...quotes[Math.floor(Math.random() * (max - min + 1)) + min],
+        fill,
+        textfill,
+      });
     case "text":
-      return userDp({text, textfill, fill});
+      return userDp({ text, textfill, fill });
     case "button":
-      return Button({fill, scale, text, textfill});
+      return Button({ fill, scale, text, textfill });
+    case "star-rating":
+      return starRating({
+        skill,
+        rating:
+          rating !== undefined && !isNaN(parseInt(rating)) && rating >= 0
+            ? rating
+            : 0,
+      });
     default:
       return componentNotFound();
   }
