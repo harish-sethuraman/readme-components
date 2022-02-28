@@ -17,11 +17,14 @@ const starRating = async (data = {}) => {
   <foreignObject width="150" height="90">
     <div xmlns="http://www.w3.org/1999/xhtml">
         <div class="flex-container">
-            ${
-              simpleIcons.get(`${skill}`) != undefined
-                ? simpleIcons.get(skill).svg
-                : skill
-            }
+            <div class="icon">
+                ${
+                  simpleIcons.get(`${skill}`) != undefined
+                    ? simpleIcons.get(skill).svg
+                    : skill
+                }
+            </div>
+           
              ${content}
         </div>
     </div>

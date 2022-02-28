@@ -1,10 +1,13 @@
 const starRatingComponentStyles = () => {
   return `
-     foreignObject svg:first-child{
-        width:30px;
-        height:30px;
+     foreignObject .icon svg{
+        width:28px;
+        height:28px;
         fill:black;
-        margin-right:0.5rem;
+      }
+      foreignObject .icon{
+       font-size:1rem;
+       margin-right:0.5rem;
       }
         .flex-container {
           display:flex;
