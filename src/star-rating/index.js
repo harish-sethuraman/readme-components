@@ -5,7 +5,6 @@ const starRatingComponentStyles = require("./index.style");
 
 const starRating = async (data = {}) => {
   const { skill, rating } = data;
-  console.log(rating);
   let content = ``;
   Array.from({ length: 5 }).map((_r, index) => {
     if (index < parseInt(rating)) {

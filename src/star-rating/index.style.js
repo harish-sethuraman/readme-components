@@ -1,5 +1,4 @@
 const starRatingComponentStyles = () => {
-  // const { name, duration, role, location, fill, textfill } = data;
   return `
      foreignObject svg:first-child{
         width:30px;
