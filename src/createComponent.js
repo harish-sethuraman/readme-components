@@ -150,10 +150,7 @@ const createComponent = async (component, params = {}) => {
     case "star-rating":
       return starRating({
         skill,
-        rating:
-          rating !== undefined && !isNaN(parseInt(rating)) && rating >= 0
-            ? rating
-            : 0,
+        rating: rating && rating <= 5 ? rating : 0,
       });
     default:
       return componentNotFound();
