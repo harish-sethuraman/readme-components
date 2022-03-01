@@ -22,7 +22,6 @@ module.exports = async (req, res) => {
     svgfill,
     desc,
     scale,
-    rating,
   } = req.query;
   res.setHeader("Content-Type", "image/svg+xml");
   if (component && req.query) {
