@@ -33,7 +33,6 @@ const createComponent = async (component, params = {}) => {
     svgfill,
     desc,
     scale,
-    rating,
   } = params;
   switch (component) {
     case "linearprogress":
@@ -150,7 +149,7 @@ const createComponent = async (component, params = {}) => {
     case "star-rating":
       return starRating({
         skill,
-        rating: rating && rating <= 5 ? rating : 0,
+        text: text && text <= 5 ? text : 0,
       });
     default:
       return componentNotFound();

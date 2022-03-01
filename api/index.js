@@ -46,7 +46,6 @@ module.exports = async (req, res) => {
       svgfill,
       desc,
       scale,
-      rating,
     });
     res.send(createcomponent);
   } else {

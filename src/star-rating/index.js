@@ -2,12 +2,12 @@ const simpleIcons = require("simple-icons");
 const starSVG = require("./star.svg.js");
 const starRatingComponentStyles = require("./index.style");
 
-const starRating = async ({ skill, rating }) => {
+const starRating = async ({ skill, text }) => {
   let content = "";
   Array.from({ length: 5 }).map((_r, index) => {
-    if (index < parseInt(rating)) {
-      content += starSVG(true);
-    } else content += starSVG();
+    if (index < parseInt(text)) {
+      content += starSVG();
+    } else content += starSVG("none");
   });
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="150" height="90">
