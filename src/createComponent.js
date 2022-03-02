@@ -147,10 +147,20 @@ const createComponent = async (component, params = {}) => {
     case "button":
       return Button({ fill, scale, text, textfill });
     case "star-rating":
-      return starRating({
-        skill,
-        text: text && text <= 5 ? text : 0,
-      });
+      if (skill && text) {
+        return starRating({
+          skill,
+          text: text && text <= 5 ? text : 0,
+        });
+      }
+      return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
+      <foreignObject width="250" height="100">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <h1>skill or text not found</h1>
+        </div>
+      </foreignObject>
+    </svg>`;
+
     default:
       return componentNotFound();
   }
