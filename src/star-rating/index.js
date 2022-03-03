@@ -6,8 +6,8 @@ const starRating = async ({ skill, text }) => {
   let content = "";
   Array.from({ length: 5 }).map((_r, index) => {
     if (index < parseInt(text)) {
-      content += starSVG();
-    } else content += starSVG("none");
+      content += starSVG("#FFD700", "#FFD700");
+    } else content += starSVG();
   });
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="150" height="90">
