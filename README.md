@@ -88,12 +88,13 @@ Showcase proficiency level of your skills with Star-Rating component
 
 _You can use the below code to generate a StarRating Component_
 
-> \_change the `&skill=` to your skill and give it a rating with `&text` param and that's all
+> change the `&skill=` to your skill and give it a rating with `&text` param and that's all
 
 ```md
 [![StarRating Component](https://readme-components.vercel.app/api?component=star-rating&skill=css3&text=4)](https://github.com/harish-sethuraman/readme-components)
 ```
 
+[![StarRating Component](https://readme-components.vercel.app/api?component=star-rating&skill=css3&text=4)](https://github.com/harish-sethuraman/readme-components)
  # Contributions 
  For details regarding contribution guidelines read [contributions.md](https://github.com/harish-sethuraman/readme-components/blob/master/CONTRIBUTING.md)
 
