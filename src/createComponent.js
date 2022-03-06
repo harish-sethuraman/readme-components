@@ -150,7 +150,7 @@ const createComponent = async (component, params = {}) => {
       if (skill && text) {
         return starRating({
           skill,
-          text: text && text <= 5 ? text : 0,
+          text: text <= 5 ? text : 0,
         });
       }
       return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
