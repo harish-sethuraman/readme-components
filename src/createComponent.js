@@ -7,9 +7,10 @@ const stackoverflowComponent = require("./stackoverflow-component");
 const contributorsComponent = require("./contributors-component");
 const quoteComponent = require("./quotes-component");
 const userDp = require("./user-dp");
+const starRating = require("./star-rating");
 const componentNotFound = require("./component-not-found");
 const Links = require("./utils/links");
-const Button = require("./button-component")
+const Button = require("./button-component");
 
 const createComponent = async (component, params = {}) => {
   const {
@@ -136,11 +137,30 @@ const createComponent = async (component, params = {}) => {
       let min = 0,
         max = 1643;
       const quotes = await fetchData(Links().api.quotes);
-      return quoteComponent({ ...quotes[Math.floor(Math.random() * (max - min + 1)) + min],fill,textfill});
+      return quoteComponent({
+        ...quotes[Math.floor(Math.random() * (max - min + 1)) + min],
+        fill,
+        textfill,
+      });
     case "text":
-      return userDp({text, textfill, fill});
+      return userDp({ text, textfill, fill });
     case "button":
-      return Button({fill, scale, text, textfill});
+      return Button({ fill, scale, text, textfill });
+    case "star-rating":
+      if (skill && text) {
+        return starRating({
+          skill,
+          text: text <= 5 ? text : 0,
+        });
+      }
+      return `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="100">
+      <foreignObject width="250" height="100">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <h1>skill or text not found</h1>
+        </div>
+      </foreignObject>
+    </svg>`;
+
     default:
       return componentNotFound();
   }
