@@ -7,7 +7,7 @@
 
 
 * AdobePremierePro
-* AdbobePhotoshop
+* AdobePhotoshop
 * AbletonLive
 * Autodesk
 * Angular
