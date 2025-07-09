@@ -5,7 +5,10 @@ const faultComponent = require("../fault-component");
 const logoComponent = (data = {}) => {
   const { logo, fill, text, textfill, animation, svgfill, desc, scale } = data;
   
-  if (!logo.match(/^[a-z]*$/) || simpleIcons.get(logo) != undefined) {
+  const iconName = `si${logo.charAt(0).toUpperCase() + logo.slice(1)}`;
+  const icon = simpleIcons[iconName];
+
+  if (icon != undefined) {
     return `
     <svg  height="${scale != undefined ? 60 * scale : "60"}" width="${
       scale == undefined
@@ -26,7 +29,7 @@ const logoComponent = (data = {}) => {
           }`
     }" xmlns="http://www.w3.org/2000/svg">
     <style>
-    ${logoComponentStyles(fill, textfill, animation, svgfill)}
+    ${logoComponentStyles(fill, textfill, animation, svgfill )}
     </style>
       <foreignObject style="transform:scale(${scale})" height="60" width="${
       text == "false"
@@ -39,17 +42,13 @@ const logoComponent = (data = {}) => {
     }">
       <div class="gradient-btn btn-color" xmlns="http://www.w3.org/1999/xhtml">
       <div class="svg">
-${simpleIcons.get(`${logo}`) != undefined ? simpleIcons.get(logo).svg : logo}
+${icon.svg}
 </div>
 ${
-  simpleIcons.get(logo) != undefined
-    ? text != "false"
-      ? desc != undefined
-        ? `<div class="text"><div>${desc}</div></div>`
-        : `<div class="text"><div>${logo}</div></div>`
-      : ""
-    : desc != undefined && text != false
-    ? `<div class="text"><div>${desc}</div></div>`
+  text != "false"
+    ? desc != undefined
+      ? `<div class="text"><div>${desc}</div></div>`
+      : `<div class="text"><div>${logo}</div></div>`
     : ""
 }
 </div>
@@ -58,7 +57,8 @@ ${
 
     `;
   } else {
-    return faultComponent();
+    return faultComponent( );
   }
 };
 module.exports = logoComponent;
+

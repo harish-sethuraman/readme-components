@@ -21,6 +21,6 @@
   "homepage": "https://github.com/harish-sethuraman/readme-components#readme",
   "dependencies": {
     "node-fetch": "^2.6.0",
-    "simple-icons": "^3.5.0"
+    "simple-icons": "^15.5.0"
   }
 }
